@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Tirez votre verset biblique unique - Une parole de Dieu spécialement pour vous">
+    <title>Tirage de Verset Biblique</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="logo">
+                <span class="logo-icon">📖</span>
+                <h1>Verset du Jour</h1>
+            </div>
+            <p class="tagline">Recevez une parole unique, spécialement pour vous</p>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main">
+            <!-- Draw Form Section -->
+            <section id="draw-section" class="card draw-card">
+                <h2>Tirez votre verset</h2>
+                <p class="card-description">
+                    Entrez votre adresse e-mail pour recevoir votre verset biblique personnel.
+                    <br><small>Chaque personne ne peut tirer qu'un seul verset.</small>
+                </p>
+
+                <form id="draw-form" class="draw-form">
+                    <div class="input-group">
+                        <label for="email" class="sr-only">Adresse e-mail</label>
+                        <input type="email" id="email" name="email" placeholder="votre@email.com" required
+                            autocomplete="email">
+                        <span class="input-icon">✉️</span>
+                    </div>
+                    <button type="submit" id="submit-btn" class="btn btn-primary">
+                        <span class="btn-text">Tirer mon verset</span>
+                        <span class="btn-loader hidden">
+                            <span class="loader"></span>
+                        </span>
+                    </button>
+                </form>
+
+                <!-- Error Message -->
+                <div id="error-message" class="message error hidden"></div>
+            </section>
+
+            <!-- Verse Display Section (hidden by default) -->
+            <section id="verse-section" class="card verse-card hidden">
+                <div class="verse-header">
+                    <span class="verse-icon">✨</span>
+                    <h2 id="verse-title">Votre Verset</h2>
+                </div>
+
+                <!-- Already drawn notice -->
+                <div id="already-drawn-notice" class="notice hidden">
+                    <span class="notice-icon">ℹ️</span>
+                    <span>Vous avez déjà tiré votre verset. Le voici à nouveau :</span>
+                </div>
+
+                <blockquote id="verse-text" class="verse-text"></blockquote>
+                <cite id="verse-reference" class="verse-reference"></cite>
+
+                <button id="new-draw-btn" class="btn btn-secondary">
+                    Nouveau tirage (autre email)
+                </button>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>Fait avec ❤️ pour répandre la Parole de Dieu</p>
+            <a href="/admin" class="admin-link">Administration</a>
+        </footer>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="/static/js/main.js"></script>
+</body>
+
+</html>
